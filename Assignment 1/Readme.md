@@ -5,4 +5,4 @@
 ######Problem Statement:  Making sense out of HTTP log file.
 
 ######Steps to run the program:
-	..*
+	*
