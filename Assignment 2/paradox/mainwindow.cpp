@@ -5,90 +5,112 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
-   ui->setupUi(this);
-   setWindowTitle("Birthday Paradox");
-   count = 0;
-   // Creating UI of 25 buttons
-   x_co = 300, y_co = 50,k=0;
-   for(int i=0;i<5;i++)
-   {
-       x_co = 300;
-       for(int j=0;j<5;j++)
-       {
-           if(k<23)
-           {
-            Arr[k] = new QPushButton(this);
-            Arr[k]->setGeometry(x_co,y_co,50,50);
-            x_co +=50;
-            k++;
-           }
-       }
-       y_co +=50;
-   }
-   ans = 0;
-
-   //Calculate probability of same birthdate for group of 25 people
-   probability = 364;
-   probability /= 365;
-   probability = (float)pow(probability,253); //300 is ((n)*(n-1)/2) for n=25, this is taken as nC2 because these are the no. of distinct pairs of birthdays for n people
-   probability = 1 - probability; //we take complement of the above value because it indicates at least one pair sharing the same birthday
-
-   // Creating Labels to display results
-
-   label1 = new QLabel(this);
-   label1->setGeometry(600,125,200,40);
-
-   label2 = new QLabel(this);
-   label2->setGeometry(600,175,200,40);
-
-   label3 = new QLabel(this);
-   label3->setGeometry(600,200,200,40);
-   label3->setText("No. of trials = "+QString::number(count));
-
-   label1->setText("Expected probability = "+QString::number(probability));
-
-   click = new QPushButton(this);
-   click->setGeometry(375,350,100,50);
-   click->setText("Generate!");
-   connect(click,SIGNAL(clicked()),this,SLOT(generate()));
+    ui->setupUi(this);
+    former = 0;
+    count = 0;
+    ans = 0;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::Clear()
+void MainWindow::Create(int x)
 {
-    for(int i=0;i<23;i++)
+    int k=0;
+    int x_co,y_co = 30;
+    if(x <=30)
     {
-        Arr[i]->setEnabled(true);
+        x_co = 45;
+        for(int i=0;i<x;i++)
+        {
+            grid[k] = new QPushButton(ui->centralWidget);
+            grid[k]->setGeometry(x_co,y_co,30,30);
+            grid[k]->setVisible(true);
+            k++;
+            x_co+= 30;
+        }
+    }
+    else
+    {
+        for(int i=0;i<((x/30));i++)
+        {
+            x_co = 45;
+            for(int j=0;j<30;j++)
+            {
+                grid[k] = new QPushButton(ui->centralWidget);
+                grid[k]->setGeometry(x_co,y_co,30,30);
+                grid[k]->setVisible(true);
+                k++;
+                x_co+= 30;
+            }
+            y_co += 30;
+        }
+        x_co = 45;
+        for(int j=0;j<(x%30);j++)
+        {
+            grid[k] = new QPushButton(ui->centralWidget);
+            grid[k]->setGeometry(x_co,y_co,30,30);
+            grid[k]->setVisible(true);
+            k++;
+            x_co+= 30;
+        }
     }
 }
 
-void MainWindow::generate()
+void MainWindow::Clear()
+{
+    for(int i=0;i<former;i++)
+    {
+        grid[i]->setEnabled(true);
+    }
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    int x = ui->lineEdit->text().toInt();
+    for(int i=0;i<former;i++)
+    {
+        grid[i]->close();
+    }
+    Create(x);
+    former = x;
+    ans = 0;
+    count = 0;
+    probability = 364;
+    probability /= 365;
+    int power = (former*(former-1))/2;
+    probability = (float)pow(probability,power);
+    probability = 1 - probability;
+    ui->label->setText("Expected probability = "+QString::number(probability));
+    ui->label_2->setText("");
+    ui->label_3->setText("");
+}
+
+void MainWindow::on_pushButton_2_clicked()
 {
     Clear();
     flag = false;
     count++;
     srand(time(NULL));
-    for(int i=0;i<23;i++)
+    for(int i=0;i<former;i++)
     {
         int x = (rand()%365 +1);
         numbers[i] = x;
-        Arr[i]->setText(QString::number(x));
+        grid[i]->setText(QString::number(x));
     }
-    for(int i=0;i<23;i++)
+    for(int i=0;i<former;i++)
     {
         for(int j=0;j<i;j++)
         {
             if(numbers[i]==numbers[j])
             {
                 flag = true;
-                Arr[i]->setEnabled(false);
-                Arr[i]->setText(QString::number(numbers[i]));
-                Arr[j]->setEnabled(false);
-                Arr[j]->setText(QString::number(numbers[j]));
+                grid[i]->setEnabled(false);
+                grid[i]->setText(QString::number(numbers[i]));
+                grid[j]->setEnabled(false);
+                grid[j]->setText(QString::number(numbers[j]));
             }
         }
     }
@@ -96,6 +118,6 @@ void MainWindow::generate()
     {
         ans++;
     }
-    label2->setText("Actual probability = "+QString::number((float)ans/count));
-    label3->setText("No. of trials = "+QString::number(count));
+    ui->label_2->setText("Actual probability = "+QString::number((float)ans/count));
+    ui->label_3->setText("No. of trials = "+QString::number(count));
 }

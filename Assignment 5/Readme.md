@@ -7,7 +7,7 @@
 ######Steps to run the program:
 	* change the 'rootpath' in program to your desired folder(line number 22)
 	* run the code as
-		-$ sudo python duplicate_files.py
+		-$ sudo python duplicate_files.py /path/to/folder/
 		- it will show you the list of duplicate files found
 		- it will ask you to remove them or not
 

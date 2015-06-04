@@ -11,12 +11,12 @@
 		* Why root?
 			- To copy the executable to /usr/bin/ you need the permissions hence.
 
-	* this will create the command to run the svc.cpp code
+	* this will create the command "svc" to run the svc.cpp code
 
 	* now to run the svc.cpp
 		* commit
 			- svc filename.txt (in our case file name is "test.txt")
 		* to display the version
 			- svc N (where N is the version number)
-
-	* output is in 'output.txt' file
+			
+	* Initialize '.count.txt' file to '-1' before running for the first time.

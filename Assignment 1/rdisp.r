@@ -1,0 +1,20 @@
+p1 <- read.table("/home/ram/ip.txt")
+plot1 <- as.data.frame(table(p1))
+X11()
+par(mar = c(8,3,1,1))
+barplot(plot1$Freq,width = 5,ylim = range(0,1000),names.arg = plot1$p1,las = 1,main = "Number of requests recieved from IP")
+
+p2 <- read.table("/home/ram/date.txt")
+plot2 <- as.data.frame(table(p2))
+X11()
+barplot(plot2$Freq,width = 5,ylim = range(0,1000),names.arg = plot2$p2 ,las = 1,main = "Date-wise number of requests recieved ")
+
+p3 <- read.table("/home/ram/status.txt")
+X11()
+barplot(p3$V2,names.arg = c("1XX","2XX","3XX","4XX","5XX"),las = 1,ylim = range(0,3000), main = "Frequency of status code")
+
+p4 <- read.table("/home/ram/uagent.txt")
+plot4 <- as.data.frame(table(p4))
+X11()
+pie(plot4$Freq, labels = plot4$p4, main="Pie Chart of User agents",radius = 1)
+invisible(readLines("stdin",n=1))
