@@ -1,21 +1,21 @@
-##Assignments: 
+###Assignments:
 
-1. Making sense out of HTTP log file 
+1. Making sense out of HTTP log file
 
-2. Is Birthday paradox really valid? 
+2. Is Birthday paradox really valid?
 
-3. TCP/IP data 
+3. TCP/IP data
 
-4. Simple Version Control 
+4. Simple Version Control
 
 5. Finding duplicate files on HDD
 
 
-##Group ID: 25
+####Group ID: 25
 
-##Group name: IoTians
+####Group name: IoTians
 
-##Members:
+#####Members:
 
 1)*Bhushan Authankar*
 

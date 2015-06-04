@@ -1,10 +1,10 @@
-##L3Cube Assignment No: 5
+###L3Cube Assignment No: 5
 
-##Detecting Duplicate Files.
+###Detecting Duplicate Files.
 
-#Problem Statement: Write a code that scans the directory for duplicate files and gives the user the option to remove those files.
+######Problem Statement: Write a code that scans the directory for duplicate files and gives the user the option to remove those files.
 
-#Steps to run the program:
+######Steps to run the program:
 	..* change the 'rootpath' in program to your desired folder(line number 22)
 	..* run the code as
 		-$ sudo python duplicate_files.py

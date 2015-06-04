@@ -1,10 +1,10 @@
-##L3Cube Assignment No: 4
+###L3Cube Assignment No: 4
 
-##Simple Version Control System.
+###Simple Version Control System.
 
-#Problem Statement: Create a simple version control (svc) program called "svc".
+######Problem Statement: Create a simple version control (svc) program called "svc".
 
-#Steps to run the code:
+######Steps to run the code:
 	..* run the shell script in root
 		..* # bash command_maker.sh svc.cpp svc
 
