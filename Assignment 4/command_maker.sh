@@ -8,7 +8,7 @@ fi
 
 echo "Initializing script ..."
 
-gcc -o $2 $1							#Compiling program
+g++ -o $2 $1							#Compiling program
 
 mv $2 /usr/bin							#Moving executable to bin
 

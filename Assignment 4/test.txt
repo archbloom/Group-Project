@@ -1,0 +1,21 @@
+Simple Version Control 
+
+The usage of svc is the following
+svc filename   : To commit
+svc N          : Output Nth version of the file.
+
+A sample flow is as follows:
+1. Create a file test.txt
+2. test.txt has the following line:
+hello
+3. Commit "svc test.txt" /* Version 0 */
+4. Add another line:
+world
+5. Commit "svc test.txt" /* Version 1 */
+6. Display version 1 "svc 1"
+hello
+world
+7. Display version 0 "svc 0"
+hello
+8. Delete the line hello  and then run "svc test.txt"
+9. Disp

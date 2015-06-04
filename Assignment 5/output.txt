@@ -1,0 +1,14 @@
+/home/archbloom/remove/Using Shared Memory in CUDA C_C++ | Parallel Forall.html
+/home/archbloom/remove/BE 2012DraftCopy.pdf
+/home/archbloom/remove/fl2/ketan.cpp
+/home/archbloom/remove/fl2/Placement_Resume_Format (copy).odt
+/home/archbloom/remove/fl2/out1 (copy).txt
+/home/archbloom/remove/fl1/Placement_Resume_Format .odt
+/home/archbloom/remove/fl1/Placement_Resume_Format (copy).odt
+/home/archbloom/remove/fl1/Using Shared Memory in CUDA C_C++ | Parallel Forall.html
+/home/archbloom/remove/fl1/qwerty.jpg
+Total duplicate files found = 9
+Time required in seconds = 0.00692105293274
+Deleting all the duplicate files: 
+Y/N:Y
+All duplicate files are removed.

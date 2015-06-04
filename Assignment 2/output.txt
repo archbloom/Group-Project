@@ -1,0 +1,7 @@
+Expected probability = 0.500478
+--------------------------------
+Count		= 473
+Total		= 1000
+Actual answer   = 0.473
+Actual Probability= 0.473
+Error percentage= 5.49035

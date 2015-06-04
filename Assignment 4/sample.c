@@ -6,7 +6,11 @@ int main(int argc, char** argv)
   {
     printf("Command line arg is : %s\n",argv[1]);
   }
-  printf("Hi Bhushan !!\n This is the great day\n");
+  else
+  {
+  	printf("No command line arg is passed.\n");
+  }
+  printf("Hello World !!\n This is the great day\n");
 
   return 0;
 }
