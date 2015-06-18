@@ -11,8 +11,6 @@
 5. Finding duplicate files on HDD
 
 
-####Group ID: 25
-
 ####Group name: IoTians
 
 #####Members:
@@ -22,3 +20,5 @@
 2)*Chinmay Kulkarni*
 
 3)*Sitaram Shelke*
+
+4)*Vivek Pimprikar*
